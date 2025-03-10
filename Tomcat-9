@@ -1,0 +1,17 @@
+#downloading apache tomcat9 from website
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.102/bin/apache-tomcat-9.0.102.zip
+ls
+unzip apache-tomcat-9.0.102.zip
+ls
+#tomcat default port is 8080, if in 8080 already a application is running then we can change the port to some other port and configure the same port in EC2 security group
+#to change the port
+cd apache-tomcat-9.0.93
+cd conf
+ls
+vi server.xml
+#in server.xml file, change port from 8080 to 9090 then esc> :wq to save the file
+#now tomcat works on 9090
+cd bin
+chmod 700 *.sh
+./startup.sh
+
